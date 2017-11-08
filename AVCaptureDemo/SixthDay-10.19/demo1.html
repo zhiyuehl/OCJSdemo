@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+   	 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+		<title>10.19-demo1-sign</title>
+		
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+		<style>
+			body {
+				margin-top: 60px;
+				background-color: #F2F2F2;
+			}
+			
+			
+			.form-signin {
+				width: 300px;
+				margin: 0px auto;
+			}
+			
+			.checkbox {
+				margin-left: 20px;
+			}
+			.form-control {
+				height: 45px;
+			}
+			.form-signin input[type="email"] {
+				border-bottom-left-radius: 0px;
+				border-bottom-right-radius: 0px;
+				border-bottom-width: 0px;
+			}
+			
+			.form-signin input[type="password"] {
+				border-top-left-radius: 0px;
+				border-top-right-radius: 0px;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		
+        <div class="container">
+            <form class="form-signin">
+                <h2 class="form-signin-heading">Please sign in</h2>
+                <input class="form-control" id="inputEmail" type="email" placeholder="Email Address" required autofocus/>
+                <input class="form-control" id="inputPassword" type="password" placeholder="Password" required/>
+                <div class="checkbox">
+                    <input type="checkbox"/> Remember me
+                </div>
+                <div>
+                    <button id="signinbtn" class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+                </div>
+                
+            </form>
+            <h4>获取LoginInfo</h4>
+            <div>
+                <button id="test1btn" class="btn btn-lg btn-primary btn-block" type="submit">Test1</button>
+            </div>
+            <h4>Test2</h4>
+            <div>
+                <button id="test2btn" class="btn btn-lg btn-primary btn-block" type="submit">Test2</button>
+            </div>
+        </div>
+        
+		<script src="jquery-3.1.0.min.js"></script>
+		<script>
+			$(function(){
+				//登录按钮
+				$("#signinbtn").click(function(){
+					 window.location.href = 'demo2.html';
+				});
+                //调用OC传数据
+                $("#test1btn").click(function(){
+                     var em = $("#inputEmail").val();
+                     var pas = $("#inputPassword").val();
+                     var dat = {"email":em,"password":pas};
+                     window.webkit.messageHandlers.UserInfo.postMessage({body: dat});
+                });
+                $("#test2btn").click(function(){
+                    var dat = JSON.stringify({"title":"我的测试","name":"zhiyuehl","sex":0});
+                    window.webkit.messageHandlers.Test2.postMessage({body: dat});
+                });
+              
+            });
+            //OC调用JS方法
+            function onOCChangeMethod(email,passwd) {
+                $("#inputEmail").val(email);
+                $("#inputPassword").val(passwd);
+            }
+            
+		</script>
+		
+		
+	</body>
+</html>

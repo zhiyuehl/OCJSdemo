@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+   		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>10.19-demo2-navbar</title>
+		
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+		<style>
+			body {
+				margin: 20px auto;
+			}
+			.jumbotron {
+				margin: 20px auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<div class="container" id="myMain">
+			<nav class="nav navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">我的博客</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="">主页</a></li>
+							<li><a href="">粉丝</a></li>
+							<li><a href="#">新鲜事</a></li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" role="button"aria-haspopup="true" aria-expanded="false">动态 <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a>最新</a></li>
+									<li><a>最热</a></li>
+									<li><a>忽略</a></li>
+									<li rol="separator" class="divider"></li>
+									<li class="dropdown-header">上月</li>
+									<li><a>最新</a></li>
+									<li><a>最热</a></li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li ><a>朋友</a></li>
+							<li><a>联系我</a></li>
+							<li><a href="demo1.html">退出登录</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div class="jumbotron">
+				<h2>我的新鲜事</h2>
+				<p>我昨天买了个彩票，今天竟然中了500万，可高兴死我了，赶紧告诉我的亲朋好友，准备着怎么怎么的花，突然，掉了一个坑进去了，就醒了。</p>
+				<button type="button" class="btn btn-lg btn-primary">看详情 &raquo;</button>
+			</div>
+			
+			<div class="table-responsive">
+				<h2>我的粉丝</h2>
+				<table class="table table-hover table-striped" id="myfans">
+					<thead>
+						<tr>
+							<th>姓名</th>
+							<th>年龄</th>
+							<th>性别</th>
+							<th>住址</th>
+							<th>粉丝数</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>小迷妹</td>
+							<td>24</td>		
+							<td>女</td>	
+							<td>我家</td>
+							<td>100</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+        
+        <script src="jquery-3.1.0.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+		<script>
+            var main = $("#myMain");
+            for (var i = 0; i < 5; i++) {
+                main.append('<div class="jumbotron"><h2>我的新鲜事</h2><p>我昨天买了个彩票，今天竟然中了500万，可高兴死我了，赶紧告诉我的亲朋好友，准备着怎么怎么的花，突然，掉了一个坑进去了，就醒了。</p><button type="button" class="btn btn-lg btn-primary">看详情 &raquo;</button></div>');
+            }
+			
+			
+			var table = $("#myfans");
+			for (var i = 0; i < 20; i++) {
+				table.append("<tr><td>小迷妹</td><td>24</td><td>女</td><td>我家</td><td>100</td></tr>");
+			}
+        alert("");
+        </script>
+		
+		
+	</body>
+</html>
