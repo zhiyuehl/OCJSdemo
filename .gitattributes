@@ -1,1 +1,6 @@
+<<<<<<< HEAD
+=======
+*.js linguist-language=Objective-C
+*.css linguist-language=Objective-C
+>>>>>>> 769fb7956fe0cbad32cc38597d8ece630923ddfe
 *.html linguist-language=Objective-C
